@@ -9,7 +9,7 @@ const SEO = (props) => {
       <title>
         {title
           ? title.slice(0, 60)
-          : "Goli Pharamacy : Online medicine and healthcare products | Same or next day delivery"}
+          : "Goli Pharamacy : Online medicine and healthcare products"}
       </title>
       <meta
         name="description"

@@ -49,7 +49,7 @@ export default function Home() {
                   <SwiperSlide>
                     <div className="flex flex-col">
                       <Image
-                        src="/img/slide1.jpg"
+                        src="/img/hero-slide1.jpg"
                         alt="Order Medicine"
                         height="300"
                         width="400"
@@ -62,7 +62,7 @@ export default function Home() {
                   <SwiperSlide>
                     <div className="flex flex-col">
                       <Image
-                        src="/img/slide3.jpg"
+                        src="/img/hero-slide2.jpg"
                         alt="Upload Prescription"
                         height="300"
                         width="400"
@@ -75,7 +75,7 @@ export default function Home() {
                   <SwiperSlide>
                     <div className="flex flex-col">
                       <Image
-                        src="/img/slide2.jpg"
+                        src="/img/hero-slide3.jpg"
                         alt="Fast Delivery"
                         height="300"
                         width="400"

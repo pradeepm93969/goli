@@ -11,7 +11,6 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import Image from "next/image";
-import { MdEmail } from "react-icons/md";
 import ContactUsForm from "../src/components/ContactUs/ContactUsForm";
 
 export default function Home() {

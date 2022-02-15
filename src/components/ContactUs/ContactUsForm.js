@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdEmail, MdPerson, MdPhone } from "react-icons/md";
 import { getDoc, setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../../firebase";
@@ -26,6 +26,34 @@ const validationSchema = Yup.object({
 const ContactUsForm = () => {
   const [disabled, setDisabled] = useState(false);
 
+  const [ip, setIP] = useState("");
+  const [lat, setLat] = useState(0);
+  const [lon, setLon] = useState(0);
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
+
+  const getData = async () => {
+    const res = await fetch("https://geolocation-db.com/json/");
+    res = await res.json();
+    console.log(res);
+    setIP(res.IPv4);
+    setLat(res.latitude);
+    setLon(res.longitude);
+    setCity(res.city);
+    setState(res.state);
+    setCountry(res.country_name);
+  };
+
+  useEffect(() => {
+    //passing getData method to the lifecycle method
+    try {
+      getData();
+    } catch (error) {
+      getData();
+    }
+  }, []);
+
   const onSubmit = async (values, { resetForm }) => {
     console.log("Form data", values);
     setDisabled(true);
@@ -37,6 +65,14 @@ const ContactUsForm = () => {
       } else {
         const response = await setDoc(docRef, {
           ...values,
+          location: {
+            ip: ip,
+            lattitude: lat,
+            longitude: lon,
+            city: city,
+            state: state,
+            country: country,
+          },
           timestamp: serverTimestamp(),
           subscribed: true,
         });

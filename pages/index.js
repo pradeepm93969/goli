@@ -116,7 +116,7 @@ export async function getServerSideProps({ locale }) {
 Home.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      title="Goli Pharamacy : Online medicine and healthcare products"
+      title="Goli Pharmacy : Online medicine and healthcare products"
       description="Goli Pharmacy is one of most trusted online pharmacy and medical stores offering pharmaceutical and healthcare products"
       keywords="pharmacy, medical stores, online pharmacy, best online pharmacy, online medical store, online medicine store, online medical shop"
     >
